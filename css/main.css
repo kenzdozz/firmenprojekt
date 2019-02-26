@@ -1,0 +1,444 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    height: 43px;
+    width: 100%;
+    margin-bottom: 3px;
+    box-shadow: 1px 1px 1px #bdb2b2;
+    background: white;
+}
+
+#loadBar {
+    height: 2.5px;
+    background: #f58021;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+}
+
+.pb0 {
+    padding-bottom: 0;
+}
+
+.pt0 {
+    padding-top: 0;
+}
+
+.pr0 {
+    padding-right: 0;
+}
+
+.pl0 {
+    padding-left: 0;
+}
+
+.mb0 {
+    margin-bottom: 0;
+}
+
+.mt0 {
+    margin-top: 0;
+}
+
+.mr0 {
+    margin-right: 0;
+}
+
+.ml0 {
+    margin-left: 0;
+}
+
+.mb1 {
+    margin-bottom: 5px;
+}
+
+.mt2 {
+    margin-top: 10px;
+}
+
+.my3 {
+    margin: 35px 0;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    padding-top: 46px;
+}
+
+.d-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-inline {
+    display: inline-block;
+}
+
+.sidebar-right {
+    position: fixed;
+    padding: 20px 10px;
+    left: 2.5%;
+    width: 200px;
+    background: #f5f5f5;
+    min-height: calc(100vh - 82px);
+}
+
+.sidebar-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-right ul li a {
+    background: #bca298;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    padding: 3px;
+    margin: 2px;
+}
+
+.content {
+    background: #ffffff;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+.nav-toggle {
+    position: fixed;
+    z-index: 3;
+    cursor: pointer;
+    padding: 5px 15px;
+    background: #2f4f4f;
+    color: #ffffff;
+}
+
+.hide{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle.hide {
+        display: inline;
+    }
+
+    .sidebar-right {
+        display: none;
+    }
+
+    .content {
+        padding-top: 30px;
+        width: 100%;
+    }
+
+    .sidebar-right.show {
+        display: block !important;
+    }
+
+    .nav.hide,
+    .logo-div.hide {
+        display: none !important;
+    }
+}
+
+
+
+.table-responsive {
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    padding: 20px;
+    font-size: .9rem;
+    border-collapse: collapse;
+}
+
+th {
+    padding: .75rem .5rem;
+    background-color: #444444;
+    color: #ffffff;
+    text-align: left;
+}
+
+td {
+    border-bottom: 1px solid #cccccc;
+    padding: .5rem;
+    background: #f5f5f5;
+    color: #333333;
+    white-space: nowrap;
+}
+
+tr:nth-child(even) td {
+    background-color: unset
+}
+
+a {
+    display: inline-block;
+}
+
+a.delete {
+    padding: .3rem .4rem;
+    vertical-align: top;
+    background-color: #dc1818;
+    border: 1px solid #dc1818;
+    border-radius: 50%;
+    color: white;
+}
+
+a.edit {
+    padding: .3rem .4rem;
+    vertical-align: top;
+    background-color: #87e6ff;
+    border: 1px solid #87e6ff;
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+}
+
+a.delete:hover,
+a.edit:hover {
+    opacity: .7;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        top: 100%;
+    }
+
+    80% {
+        top: 10%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        top: -100%;
+    }
+
+    80% {
+        top: -10%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes shakeIt {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 1px, 0);
+        top: 0;
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 3px, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    overflow: auto;
+    background: #0000008c;
+    top: 100%;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+}
+
+.modal.show .modal-content.shake {
+    animation: shakeIt 0.5s linear;
+}
+
+.modal-content {
+    position: absolute;
+    top: 0;
+    max-width: 500px;
+    min-width: 35vw;
+    padding: 25px;
+    margin: 40px auto;
+    background-color: #ffffff;
+}
+
+#dialogModal.show .modal-content.slide-in {
+    animation: slideDown 0.4s linear;
+}
+
+.modal.show .modal-content.slide-in {
+    animation: slideUp 0.4s linear;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+    top: 0;
+    animation: fadeIn 0.5s linear;
+}
+
+span.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #333;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.form-control {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    outline: 0;
+    border-radius: 0;
+    border-color: #444444;
+}
+
+.form-error {
+    color: #ff0000;
+    font-size: 0.8rem;
+    flex: 0 0 100%;
+    text-align: right;
+    margin: 3px;
+}
+
+.input-group {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.input-group label.req::after {
+    content: " *";
+    color: #ff0000;
+}
+
+.input-group label {
+    margin-right: 7px;
+    min-width: 135px;
+}
+
+.input-group input {
+    flex-grow: 1 !important;
+}
+
+.btn {
+    cursor: pointer;
+    padding: .35rem .85rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-sm {
+    font-size: 0.85rem;
+    padding: .1rem .75rem;
+}
+
+.btn-lg {
+    font-size: 1.2rem;
+    padding: .5rem 2rem;
+}
+
+.btn-red {
+    color: #000000;
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.btn-light {
+    color: #000000;
+    background-color: #cfd0cb;
+    border: 1px solid #cfd0cb;
+}
+
+.btn-green {
+    background-color: #318e0a;
+    border: 1px solid #318e0a;
+    color: #ffffff;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.empty {
+    text-align: center;
+    margin: 15px;
+}

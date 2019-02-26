@@ -1,0 +1,26 @@
+{
+    "name": "kenzdozz/firmenprojekt",
+    "description": "A company bills management app",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kenneth Chidozie",
+            "email": "kenzdozz@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "DB\\": "database/",
+            "CTRL\\": "controller/"
+        }
+    },
+    "scripts": {
+        "migrate:up": "php -r \"include 'database/Migration.php'; runMigrationUp();\"",
+        "migrate:down": "php -r \"include 'database/Migration.php'; runMigrationDown();\"",
+        "migrate:seed": "php -r \"include 'database/Migration.php'; runSeeder();\""
+    }
+}
