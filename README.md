@@ -11,7 +11,8 @@ To install run
 > `git clone https://github.com/kenzdozz/firmenprojekt.git`
 
 When this is done, run 
-> `composer install`
+> - `cd firmenprojekt`
+> - `composer install`
 
 ### Setting up
 Rename `.env.example` to `.env` and add the Database connection details
@@ -26,7 +27,10 @@ To drop tables at any time, run
 > `composer run-script migrate:down`
 
 ## Usage
-A GET request to `/` takes you to the app.
+To start the app run
+> `composer run-script start`
+
+On your browser, a visit to `http://localhost:8800/` takes you to the app. (You can change the port on composer.json).
 
 A POST request to `/create` with form data `company_name, company_id, bill_amount, bill_purpose, payment_date` creates a new record and returns a JSON response object with properties `status` response status code and `data` the newly created record.
 

@@ -19,6 +19,7 @@
         }
     },
     "scripts": {
+        "start": "php -S localhost:8800",
         "migrate:up": "php -r \"include 'database/Migration.php'; runMigrationUp();\"",
         "migrate:down": "php -r \"include 'database/Migration.php'; runMigrationDown();\"",
         "migrate:seed": "php -r \"include 'database/Migration.php'; runSeeder();\""
